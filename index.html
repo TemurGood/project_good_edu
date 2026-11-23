@@ -860,7 +860,8 @@
   <!-- Toast Notification -->
   <div class="toast-notification" id="toastNotification" aria-live="polite"></div>
 
-  <script src="local.config.js" onerror="console.info('Running without local.config.js — enter API key in UI')"></script>
+  <script src="local.config.js" onerror="console.info('Loading env from Vercel /api/env...')"></script>
+  <script src="/api/env" onerror="console.info('Local mode')"></script>
   <script src="data.js"></script>
   <script src="googleRagEngine.js"></script>
   <script src="app.js"></script>
