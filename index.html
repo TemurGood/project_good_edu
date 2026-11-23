@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Edu — Инновационная IT-школа и Академия Цифровых Профессий</title>
+  <meta name="description" content="IT-школа Good Edu: практическое обучение программированию, искусственному интеллекту, UI/UX дизайну, мобильной разработке и кибербезопасности." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Background decorative ambient glow -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand-logo" aria-label="Good Edu Home">
+        <span class="logo-mark">
+          <svg width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="28" height="28" rx="8" fill="url(#logoGrad)" />
+            <path d="M9 11L5 14L9 17M19 11L23 14L19 17M16 8L12 20" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6366F1"/>
+                <stop offset="1" stop-color="#06B6D4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">Good<span>Edu</span></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link" data-i18n="nav_about">О школе</a>
+        <a href="#stats" class="nav-link" data-i18n="nav_stats">Результаты</a>
+        <a href="#courses" class="nav-link" data-i18n="nav_courses">Направления</a>
+        <a href="#teachers" class="nav-link" data-i18n="nav_teachers">Преподаватели</a>
+        <a href="#events" class="nav-link" data-i18n="nav_events">События и новости</a>
+        <a href="#contact" class="nav-link" data-i18n="nav_contact">Контакты</a>
+      </nav>
+
+      <div class="header-controls">
+        <!-- Language Switcher (RU / UZ / EN) -->
+        <div class="lang-switcher" role="group" aria-label="Language switcher">
+          <button type="button" class="lang-btn active" data-lang="ru">RU</button>
+          <button type="button" class="lang-btn" data-lang="uz">UZ</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <!-- Theme Switcher (Dark / Light) -->
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Переключить тему">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Admin Panel Trigger -->
+        <button type="button" class="btn-admin" id="openAdminBtn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+          </svg>
+          <span data-i18n="nav_admin">Админ-панель</span>
+          <span class="admin-badge" id="adminLeadCount">2</span>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="pulse-dot"></span>
+            <span data-i18n="hero_badge">Ведущая IT-академия нового поколения</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span data-i18n="hero_title_1">Создай свою карьеру в IT вместе с</span>
+            <span class="gradient-text" data-i18n="hero_title_highlight">Good Edu</span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            Практическое обучение востребованным IT-профессиям под руководством действующих Senior-разработчиков, дизайнеров и AI-инженеров. Реальные проекты в портфолио и помощь в трудоустройстве.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#courses" class="btn btn-primary">
+              <span data-i18n="hero_cta_primary">Выбрать направление</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <button type="button" class="btn btn-glass" id="heroMediaToggleBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <span data-i18n="hero_cta_secondary">Смотреть учебный процесс</span>
+            </button>
+          </div>
+
+          <!-- Quick Tech Specialists Preview Strip -->
+          <div class="hero-specialists-bar">
+            <div class="avatar-stack">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&q=80" alt="Full-Stack Specialist" />
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="AI Specialist" />
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80" alt="UI/UX Specialist" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Cybersecurity Specialist" />
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80" alt="Mobile Specialist" />
+            </div>
+            <div class="specialists-chips">
+              <span class="spec-chip">Full-Stack</span>
+              <span class="spec-chip">AI & Data Science</span>
+              <span class="spec-chip">UI/UX Design</span>
+              <span class="spec-chip">DevSecOps</span>
+              <span class="spec-chip">Flutter Mobile</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Media Showcase (Photo Gallery + Live Classroom Video Player) -->
+        <div class="hero-media-wrapper">
+          <div class="hero-media-card">
+            <div class="media-top-bar">
+              <div class="window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="live-indicator">
+                <span class="live-dot"></span>
+                <span data-i18n="hero_live_tag">LIVE • Идёт занятие по Full-Stack & AI</span>
+              </div>
+              <div class="media-mode-switch" role="tablist">
+                <button type="button" class="media-tab active" data-mode="photo" id="tabPhotoMode">Фото</button>
+                <button type="button" class="media-tab" data-mode="video" id="tabVideoMode">Видео</button>
+              </div>
+            </div>
+
+            <div class="media-viewport">
+              <!-- Photo Slide View -->
+              <div class="media-view active" id="heroPhotoView">
+                <img
+                  id="heroShowcaseImg"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85"
+                  alt="Учебный процесс в IT-школе Good Edu"
+                />
+                <div class="photo-thumbs">
+                  <button type="button" class="thumb-btn active" data-img="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85" aria-label="Командный кодинг">1. Коворкинг</button>
+                  <button type="button" class="thumb-btn" data-img="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=85" aria-label="Менторская сессия">2. Менторство</button>
+                  <button type="button" class="thumb-btn" data-img="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=85" aria-label="Воркшоп и лекция">3. Хакатон</button>
+                </div>
+              </div>
+
+              <!-- Video View (HTML5 Video with fallback animated interactive coding canvas/poster) -->
+              <div class="media-view" id="heroVideoView">
+                <video
+                  id="heroClassroomVideo"
+                  class="classroom-video"
+                  controls
+                  loop
+                  muted
+                  playsinline
+                  poster="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=85"
+                >
+                  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+
+            <div class="media-caption">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+              <span data-i18n="hero_video_caption">Интерактивный кампус Good Edu: код-ревью, командные хакатоны и воркшопы</span>
+            </div>
+          </div>
+
+          <!-- Floating metric cards -->
+          <div class="floating-badge badge-bottom-left">
+            <div class="float-icon">🚀</div>
+            <div>
+              <strong data-i18n="hero_floating_1_title">94% трудоустройство</strong>
+              <span data-i18n="hero_floating_1_sub">в первые 3 месяца после выпуска</span>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-top-right">
+            <div class="float-icon">⚡</div>
+            <div>
+              <strong data-i18n="hero_floating_2_title">Менторская поддержка 24/7</strong>
+              <span data-i18n="hero_floating_2_sub">разбор кода и карьерный коучинг</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. LEARNING OUTCOMES STATISTICS SECTION -->
+    <section class="stats-section section-padding" id="stats">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="stats_badge">Результаты обучения</span>
+          <h2 class="section-title" data-i18n="stats_title">Цифры, которыми мы гордимся</h2>
+          <p class="section-subtitle" data-i18n="stats_subtitle">
+            Мы измеряем успех реальными офферами наших выпускников, ростом их зарплат и запущенными проектами.
+          </p>
+        </div>
+
+        <div class="stats-grid" id="statsGrid">
+          <!-- Dynamically rendered from state.stats -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. LEARNING TRACKS / COURSES SECTION -->
+    <section class="courses-section section-padding" id="courses">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="courses_badge">Программы обучения</span>
+          <h2 class="section-title" data-i18n="courses_title">Выберите своё IT-направление</h2>
+          <p class="section-subtitle" data-i18n="courses_subtitle">
+            От фундаментальной разработки до искусственного интеллекта и кибербезопасности — программы обновлены под требования рынка 2026 года.
+          </p>
+        </div>
+
+        <!-- Category Filter Bar -->
+        <div class="filter-tabs" id="courseFilters" role="tablist">
+          <button type="button" class="filter-btn active" data-category="all" data-i18n="filter_all">Все направления</button>
+          <button type="button" class="filter-btn" data-category="dev" data-i18n="filter_dev">Разработка</button>
+          <button type="button" class="filter-btn" data-category="data" data-i18n="filter_data">AI & Data</button>
+          <button type="button" class="filter-btn" data-category="design" data-i18n="filter_design">Дизайн</button>
+          <button type="button" class="filter-btn" data-category="security" data-i18n="filter_security">Инфраструктура & Security</button>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="courses-grid" id="coursesGrid">
+          <!-- Dynamically rendered from state.courses -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. TEACHERS / IT SPECIALISTS SECTION -->
+    <section class="teachers-section section-padding" id="teachers">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="teachers_badge">Команда экспертов</span>
+          <h2 class="section-title" data-i18n="teachers_title">Учитесь у практикующих IT-специалистов</h2>
+          <p class="section-subtitle" data-i18n="teachers_subtitle">
+            Наши наставники — Senior и Lead специалисты из международных технологических компаний с опытом коммерческой разработки от 5 до 12 лет.
+          </p>
+        </div>
+
+        <div class="teachers-grid" id="teachersGrid">
+          <!-- Dynamically rendered from state.teachers -->
+        </div>
+
+        <!-- LIVE EXCEL SCHEDULE & FREE SLOTS BOOKING TABLE -->
+        <div class="live-schedule-box" id="schedule">
+          <div class="schedule-box-header">
+            <div>
+              <span class="section-tag">Excel / Google Sheets Live Sync</span>
+              <h3 class="schedule-box-title">Таблица расписания преподавателей и свободные окна для записи</h3>
+              <p class="schedule-box-sub">
+                Выберите свободное окно («Свободно») или попросите AI-агента (<code>gemini-3.5-flash-lite</code>) в чате найти свободный слот и записать вас!
+              </p>
+            </div>
+            <div class="schedule-box-actions">
+              <select id="publicScheduleTeacherFilter" class="schedule-filter-select">
+                <option value="all">Все преподаватели (6)</option>
+              </select>
+              <select id="publicScheduleStatusFilter" class="schedule-filter-select">
+                <option value="all">Все окна</option>
+                <option value="free">Только свободные окна</option>
+                <option value="busy">Занятые окна</option>
+              </select>
+              <a href="good_edu_schedule.xlsx" download class="btn btn-outline-sm">📥 Скачать .XLSX</a>
+            </div>
+          </div>
+
+          <div class="excel-table-wrap">
+            <table class="excel-table" id="publicExcelScheduleTable">
+              <thead>
+                <tr>
+                  <th>Slot ID</th>
+                  <th>Преподаватель и стек</th>
+                  <th>Направление (Курс)</th>
+                  <th>День и Время</th>
+                  <th>Кабинет</th>
+                  <th>Статус окна</th>
+                  <th>Запись / Студент</th>
+                </tr>
+              </thead>
+              <tbody id="publicScheduleTbody">
+                <!-- Populated dynamically from GoodEduRAG.getScheduleTable() -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. EVENTS & NEWS SECTION -->
+    <section class="events-section section-padding" id="events">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-tag" data-i18n="events_badge">Жизнь академии</span>
+            <h2 class="section-title" data-i18n="events_title">Мероприятия и новости учебного центра</h2>
+            <p class="section-subtitle" data-i18n="events_subtitle">
+              Открытые воркшопы, хакатоны, митапы с лидерами индустрии и главные новости кампуса Good Edu.
+            </p>
+          </div>
+
+          <div class="filter-tabs compact-tabs" id="eventFilters">
+            <button type="button" class="filter-btn active" data-type="all" data-i18n="events_filter_all">Все</button>
+            <button type="button" class="filter-btn" data-type="event" data-i18n="events_filter_event">Мероприятия</button>
+            <button type="button" class="filter-btn" data-type="news" data-i18n="events_filter_news">Новости</button>
+          </div>
+        </div>
+
+        <div class="events-grid" id="eventsGrid">
+          <!-- Dynamically rendered from state.events -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTACTS & FEEDBACK SECTION -->
+    <section class="contact-section section-padding" id="contact">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <span class="section-tag" data-i18n="contact_badge">Свяжитесь с нами</span>
+            <h2 class="section-title" data-i18n="contact_title">Запишитесь на бесплатную консультацию</h2>
+            <p class="contact-desc" data-i18n="contact_subtitle">
+              Оставьте заявку — наш карьерный консультант поможет выбрать подходящее IT-направление, расскажет о программе и пригласит на пробный урок.
+            </p>
+
+            <div class="contact-cards">
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <span class="contact-label" data-i18n="contact_address_label">Адрес кампуса</span>
+                  <strong data-i18n="contact_address_val">г. Ташкент, Мирзо-Улугбекский р-н, IT-Парк, ул. Муминова, 7А</strong>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                  <span class="contact-label" data-i18n="contact_phone_label">Телефон приёмной комиссии</span>
+                  <strong><a href="tel:+998712007788">+998 (71) 200-77-88</a> • <a href="tel:+998901234567">+998 (90) 123-45-67</a></strong>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div>
+                  <span class="contact-label" data-i18n="contact_email_label">Электронная почта</span>
+                  <strong><a href="mailto:admissions@goodedu.uz">admissions@goodedu.uz</a></strong>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">🕒</div>
+                <div>
+                  <span class="contact-label" data-i18n="contact_hours_label">Режим работы</span>
+                  <strong data-i18n="contact_hours_val">Пн–Сб: 09:00 – 21:00, Вс: 10:00 – 18:00</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <form id="feedbackForm" class="feedback-form">
+              <div class="form-group">
+                <label for="leadName" data-i18n="form_name">Ваше имя</label>
+                <input type="text" id="leadName" required data-i18n-placeholder="form_name_placeholder" placeholder="Например, Тимур Каримов" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="leadPhone" data-i18n="form_phone">Номер телефона</label>
+                  <input type="tel" id="leadPhone" required data-i18n-placeholder="form_phone_placeholder" placeholder="+998 (90) 123-45-67" />
+                </div>
+                <div class="form-group">
+                  <label for="leadEmail" data-i18n="form_email">Email (необязательно)</label>
+                  <input type="email" id="leadEmail" data-i18n-placeholder="form_email_placeholder" placeholder="name@example.com" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="leadCourse" data-i18n="form_course">Интересующее направление</label>
+                <select id="leadCourse" required>
+                  <!-- Populated dynamically with courses -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="leadMessage" data-i18n="form_message">Ваш вопрос или комментарий</label>
+                <textarea id="leadMessage" rows="3" data-i18n-placeholder="form_message_placeholder" placeholder="Расскажите о вашем опыте или удобном времени для звонка..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">
+                <span data-i18n="form_submit">Отправить заявку</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <div class="form-alert" id="formSuccessAlert" hidden>
+                <span class="alert-icon">✅</span>
+                <span data-i18n="form_success">Спасибо! Ваша заявка принята. Она уже отображается в Админ-панели!</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="brand-logo">
+          <span class="logo-mark">
+            <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+              <rect width="28" height="28" rx="8" fill="url(#logoGradFooter)" />
+              <path d="M9 11L5 14L9 17M19 11L23 14L19 17M16 8L12 20" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="logoGradFooter" x1="0" y1="0" x2="28" y2="28">
+                  <stop stop-color="#6366F1"/>
+                  <stop offset="1" stop-color="#06B6D4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="logo-text">Good<span>Edu</span></span>
+        </a>
+        <p class="footer-desc" data-i18n="footer_desc">
+          Современная IT-школа полного цикла. Готовим востребованных инженеров, дизайнеров и аналитиков с гарантированной практикой на реальных проектах.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero" data-i18n="nav_about">О школе</a>
+        <a href="#stats" data-i18n="nav_stats">Результаты</a>
+        <a href="#courses" data-i18n="nav_courses">Направления</a>
+        <a href="#teachers" data-i18n="nav_teachers">Преподаватели</a>
+        <a href="#events" data-i18n="nav_events">События и новости</a>
+        <a href="#contact" data-i18n="nav_contact">Контакты</a>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="footer_rights">© 2026 IT-школа «Good Edu». Все права защищены.</span>
+        <div class="social-links">
+          <a href="#contact" aria-label="Telegram">Telegram</a>
+          <a href="#contact" aria-label="Instagram">Instagram</a>
+          <a href="#contact" aria-label="YouTube">YouTube</a>
+          <a href="#contact" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       INTERACTIVE ADMIN PANEL (CMS MODAL / DRAWER)
+       ===================================================== -->
+  <div class="admin-overlay" id="adminModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="admin-dialog">
+      <!-- Admin Header -->
+      <div class="admin-header">
+        <div>
+          <div class="admin-title-row">
+            <span class="admin-status-dot"></span>
+            <h2 class="admin-title" data-i18n="admin_title">Панель управления Good Edu CMS</h2>
+          </div>
+          <p class="admin-subtitle" data-i18n="admin_subtitle">
+            Управляйте направлениями, преподавателями, новостями, статистикой и заявками студентов в реальном времени
+          </p>
+        </div>
+
+        <div class="admin-header-actions">
+          <button type="button" class="btn btn-outline-sm" id="resetDataBtn" data-i18n="admin_reset_btn">
+            Сбросить демо-данные
+          </button>
+          <button type="button" class="btn-close-admin" id="closeAdminBtn" aria-label="Close Admin Panel">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin Layout: Sidebar Tabs + Workspace -->
+      <div class="admin-body">
+        <aside class="admin-sidebar" role="tablist">
+          <button type="button" class="admin-nav-btn active" data-admin-tab="dashboard">
+            <span>📊</span>
+            <span data-i18n="admin_tab_dashboard">Дашборд & Заявки</span>
+            <span class="sidebar-counter" id="sidebarLeadsBadge">2</span>
+          </button>
+          <button type="button" class="admin-nav-btn" data-admin-tab="courses">
+            <span>💻</span>
+            <span data-i18n="admin_tab_courses">Направления</span>
+            <span class="sidebar-counter" id="sidebarCoursesBadge">6</span>
+          </button>
+          <button type="button" class="admin-nav-btn" data-admin-tab="teachers">
+            <span>👨‍🏫</span>
+            <span data-i18n="admin_tab_teachers">Преподаватели</span>
+            <span class="sidebar-counter" id="sidebarTeachersBadge">5</span>
+          </button>
+          <button type="button" class="admin-nav-btn" data-admin-tab="events">
+            <span>📅</span>
+            <span data-i18n="admin_tab_events">Мероприятия и новости</span>
+            <span class="sidebar-counter" id="sidebarEventsBadge">3</span>
+          </button>
+          <button type="button" class="admin-nav-btn" data-admin-tab="stats">
+            <span>📈</span>
+            <span data-i18n="admin_tab_stats">Статистика</span>
+          </button>
+          <button type="button" class="admin-nav-btn" data-admin-tab="rag">
+            <span>🧠</span>
+            <span data-i18n="admin_tab_rag">RAG База знаний</span>
+            <span class="sidebar-counter" id="sidebarRagBadge">17</span>
+          </button>
+        </aside>
+
+        <div class="admin-content">
+          <!-- TAB 1: DASHBOARD & LEADS -->
+          <div class="admin-pane active" id="pane-dashboard">
+            <div class="admin-kpi-grid" id="adminKpiGrid">
+              <!-- Populated dynamically -->
+            </div>
+
+            <div class="admin-section-box">
+              <div class="admin-box-header">
+                <h3 data-i18n="admin_leads_title">Заявки с сайта (Обратная связь)</h3>
+              </div>
+              <div class="admin-leads-list" id="adminLeadsList">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: COURSES MANAGEMENT -->
+          <div class="admin-pane" id="pane-courses">
+            <div class="admin-section-box">
+              <div class="admin-box-header">
+                <h3 data-i18n="admin_add_course">+ Добавить направление</h3>
+              </div>
+              <form id="adminCourseForm" class="admin-form-grid">
+                <input type="text" id="newCourseTitle" placeholder="Название направления (напр. Python Backend Developer)" required />
+                <select id="newCourseCategory">
+                  <option value="dev">Development (Разработка)</option>
+                  <option value="data">AI & Data Science</option>
+                  <option value="design">UI/UX & Product Design</option>
+                  <option value="security">Cloud, DevOps & Security</option>
+                </select>
+                <input type="text" id="newCourseDuration" placeholder="Длительность (напр. 8 месяцев)" required />
+                <input type="text" id="newCoursePrice" placeholder="Стоимость в мес (напр. 1 900 000)" required />
+                <input type="text" id="newCourseSkills" placeholder="Навыки через запятую (Python, FastAPI, Docker)" required />
+                <input type="text" id="newCourseDesc" placeholder="Краткое описание программы курса..." required />
+                <button type="submit" class="btn btn-primary" data-i18n="admin_save">Сохранить</button>
+              </form>
+            </div>
+
+            <div class="admin-items-list" id="adminCoursesList">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+
+          <!-- TAB 3: TEACHERS MANAGEMENT -->
+          <div class="admin-pane" id="pane-teachers">
+            <div class="admin-section-box">
+              <div class="admin-box-header">
+                <h3 data-i18n="admin_add_teacher">+ Добавить специалиста</h3>
+              </div>
+              <form id="adminTeacherForm" class="admin-form-grid">
+                <input type="text" id="newTeacherName" placeholder="Имя и фамилия специалиста" required />
+                <input type="text" id="newTeacherRole" placeholder="IT-специализация (напр. Senior QA Automation)" required />
+                <input type="text" id="newTeacherCompany" placeholder="Компания / Регалии (напр. Ex-Yandex • Lead QA)" required />
+                <input type="text" id="newTeacherExp" placeholder="Опыт (напр. 8 лет в IT)" required />
+                <input type="text" id="newTeacherStack" placeholder="Стек через запятую (Playwright, Python, CI/CD)" required />
+                <input type="url" id="newTeacherAvatar" placeholder="URL фото (необязательно)" />
+                <input type="text" id="newTeacherBio" class="span-2" placeholder="Краткая биография и достижения..." required />
+                <button type="submit" class="btn btn-primary" data-i18n="admin_save">Сохранить</button>
+              </form>
+            </div>
+
+            <div class="admin-items-list" id="adminTeachersList">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+
+          <!-- TAB 4: EVENTS & NEWS MANAGEMENT -->
+          <div class="admin-pane" id="pane-events">
+            <div class="admin-section-box">
+              <div class="admin-box-header">
+                <h3 data-i18n="admin_add_event">+ Добавить событие / новость</h3>
+              </div>
+              <form id="adminEventForm" class="admin-form-grid">
+                <input type="text" id="newEventTitle" placeholder="Заголовок мероприятия или новости" required />
+                <select id="newEventType">
+                  <option value="event">Мероприятие (Event / Workshop / Hackathon)</option>
+                  <option value="news">Новость (Campus News)</option>
+                </select>
+                <input type="text" id="newEventTag" placeholder="Тег (напр. Митап / Новость)" required />
+                <input type="text" id="newEventDate" placeholder="Дата и время (напр. 12.12.2026 • 17:00)" required />
+                <input type="text" id="newEventDesc" class="span-2" placeholder="Описание мероприятия или новости..." required />
+                <button type="submit" class="btn btn-primary" data-i18n="admin_save">Сохранить</button>
+              </form>
+            </div>
+
+            <div class="admin-items-list" id="adminEventsList">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+
+          <!-- TAB 5: STATS MANAGEMENT -->
+          <div class="admin-pane" id="pane-stats">
+            <div class="admin-section-box">
+              <div class="admin-box-header">
+                <h3 data-i18n="admin_tab_stats">Статистика результатов обучения</h3>
+              </div>
+              <div class="admin-stats-editor" id="adminStatsEditor">
+                <!-- Populated dynamically so user can edit values and save -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 6: RAG KNOWLEDGE BASE & GOOGLE DOCS (.DOCX) + EXCEL (.XLSX) CLOUD SYNC -->
+          <div class="admin-pane" id="pane-rag">
+            <!-- 1. Google Cloud & Google Docs/Sheets Live Sync Box -->
+            <div class="admin-section-box">
+              <div class="admin-box-header">
+                <div>
+                  <h3>☁️ Глобальная синхронизация: Google Docs (.docx) + Excel/Google Sheets (.xlsx)</h3>
+                  <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 3px;">
+                    При изменении документов в Google Cloud агент (<code>gemini-3.5-flash-lite</code>) сразу получает свежие данные и обновляет векторы (<code>gemini-embedding-001</code>).
+                  </p>
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                  <a href="good_edu_price.docx" download class="btn btn-outline-sm">📄 Прайс (.DOCX)</a>
+                  <a href="good_edu_faq.docx" download class="btn btn-outline-sm">📄 FAQ (.DOCX)</a>
+                  <a href="good_edu_schedule.xlsx" download class="btn btn-outline-sm">📊 Расписание (.XLSX)</a>
+                  <button type="button" class="btn btn-outline-sm" id="exportLiveScheduleCsvBtn">💾 Экспорт с записями (.CSV)</button>
+                </div>
+              </div>
+
+              <div class="admin-form-grid" style="margin-top: 12px;">
+                <input
+                  type="password"
+                  id="adminGeminiKeyInput"
+                  placeholder="1. GEMINI_API_KEY (AIzaSy...) из Google AI Studio"
+                />
+                <input
+                  type="url"
+                  id="cloudAppsScriptUrlInput"
+                  placeholder="2. URL Web App моста Google Apps Script (для чтения и записи в таблицу)"
+                />
+                <input
+                  type="text"
+                  id="cloudPriceDocIdInput"
+                  placeholder="ID Google Doc Прайса (good_edu_price.docx)"
+                />
+                <input
+                  type="text"
+                  id="cloudFaqDocIdInput"
+                  placeholder="ID Google Doc FAQ (good_edu_faq.docx)"
+                />
+                <input
+                  type="text"
+                  id="cloudScheduleSheetIdInput"
+                  placeholder="ID Google Таблицы расписания (good_edu_schedule.xlsx)"
+                />
+                <input
+                  type="password"
+                  id="cloudGoogleApiKeyInput"
+                  placeholder="Google Cloud Console API Key (Sheets/Drive API, опционально)"
+                />
+              </div>
+
+              <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; align-items: center;">
+                <button type="button" class="btn btn-primary" id="saveAdminGeminiKeyBtn">💾 Сохранить настройки Cloud & API</button>
+                <button type="button" class="btn btn-glass" id="syncGoogleCloudNowBtn">🔄 Синхронизировать с Google Docs / Sheets</button>
+                <button type="button" class="btn btn-glass" id="indexVectorsNowBtn">⚡ Векторизовать чанки (3072d)</button>
+                <button type="button" class="btn btn-outline-sm" id="resetScheduleTableBtn">Сбросить слоты расписания</button>
+              </div>
+
+              <p id="ragIndexStatusText" style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 10px;">
+                Модель агента: <strong>gemini-3.5-flash-lite</strong> • Векторы: <strong>gemini-embedding-001</strong> • Авто-синхронизация с Google Docs/Sheets активна.
+              </p>
+            </div>
+
+            <!-- 2. Interactive Excel Schedule & Bookings Manager inside Admin -->
+            <div class="admin-section-box">
+              <div class="admin-box-header">
+                <h3>📅 Таблица Excel: Расписание преподавателей и запись студентов в окна</h3>
+                <span class="rag-model-badge" id="adminScheduleSummaryBadge">Свободно: 23 / 27</span>
+              </div>
+
+              <form id="adminQuickBookForm" class="admin-form-grid" style="margin-bottom: 16px;">
+                <select id="adminBookSlotSelect" required>
+                  <!-- Populated with free slots -->
+                </select>
+                <input type="text" id="adminBookStudentName" placeholder="Имя и фамилия студента" required />
+                <input type="tel" id="adminBookStudentPhone" placeholder="Телефон студента (+998...)" required />
+                <button type="submit" class="btn btn-primary">✅ Записать студента в таблицу</button>
+              </form>
+
+              <div class="excel-table-wrap admin-excel-wrap">
+                <table class="excel-table">
+                  <thead>
+                    <tr>
+                      <th>Slot ID</th>
+                      <th>Преподаватель</th>
+                      <th>Направление</th>
+                      <th>День / Время</th>
+                      <th>Статус</th>
+                      <th>Студент и Телефон</th>
+                      <th>Действие</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminScheduleTbody">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 3. Transformed RAG Chunks Inspector -->
+            <div class="admin-section-box">
+              <div class="admin-box-header">
+                <h3>📚 Актуальные RAG-чанки агента (Прайс .docx + FAQ .docx + Живые слоты Excel)</h3>
+              </div>
+              <div class="admin-items-list" id="adminRagChunksList">
+                <!-- Populated dynamically from GOOD_EDU_RAG_CHUNKS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       FLOATING AI RAG ASSISTANT WIDGET (gemini-3.5-flash-lite)
+       ===================================================== -->
+  <div class="rag-assistant-wrapper" id="ragAssistantWrapper">
+    <!-- Chat Drawer Window -->
+    <div class="rag-chat-window" id="ragChatWindow" aria-hidden="true">
+      <div class="rag-chat-header">
+        <div class="rag-agent-identity">
+          <div class="rag-avatar">
+            <span>🤖</span>
+            <span class="rag-online-dot"></span>
+          </div>
+          <div>
+            <h3 class="rag-agent-title" data-i18n="rag_assistant_title">Good Edu AI Консультант</h3>
+            <span class="rag-agent-sub" data-i18n="rag_assistant_sub">RAG • gemini-3.5-flash-lite • gemini-embedding-001</span>
+          </div>
+        </div>
+
+        <div class="rag-header-actions">
+          <button type="button" class="rag-key-toggle-btn" id="ragKeyToggleBtn" title="Настроить GEMINI_API_KEY">
+            🔑 <span data-i18n="rag_key_btn">API Ключ</span>
+          </button>
+          <button type="button" class="rag-close-btn" id="closeRagChatBtn" aria-label="Close AI Assistant">✕</button>
+        </div>
+      </div>
+
+      <!-- Collapsible API Key Bar inside Chat -->
+      <div class="rag-key-drawer" id="ragKeyDrawer" hidden>
+        <div class="rag-key-drawer-inner">
+          <input
+            type="password"
+            id="chatGeminiKeyInput"
+            placeholder="Google AI Studio GEMINI_API_KEY (AIzaSy...)"
+          />
+          <button type="button" class="btn btn-primary btn-xs" id="saveChatGeminiKeyBtn">OK</button>
+        </div>
+        <small>Ключ сохраняется локально в браузере для вызовов <code>gemini-embedding-001</code> и <code>gemini-3.5-flash-lite</code>.</small>
+      </div>
+
+      <!-- Messages Viewport -->
+      <div class="rag-messages" id="ragMessagesList">
+        <!-- Populated dynamically -->
+      </div>
+
+      <!-- Quick Prompt Chips (Price / Free Slots / Agent Booking / FAQ) -->
+      <div class="rag-quick-chips" id="ragQuickChips">
+        <button type="button" class="rag-chip" data-rag-prompt="Какие есть свободные окна у преподавателей для записи?" data-i18n="rag_chip_2">
+          Какие есть свободные окна у преподавателей?
+        </button>
+        <button type="button" class="rag-chip" data-rag-prompt="Запиши меня в SLOT-102 к Азизбеку Рахимову, меня зовут Алишер Каримов, телефон +998 90 777-88-99">
+          ⚡ Тест записи агентом в SLOT-102
+        </button>
+        <button type="button" class="rag-chip" data-rag-prompt="Сколько стоят курсы в сумах и на какие курсы есть рассрочка 0%?" data-i18n="rag_chip_1">
+          Сколько стоят курсы и есть ли рассрочка?
+        </button>
+        <button type="button" class="rag-chip" data-rag-prompt="Нужен ли свой ноутбук на занятиях и что взять с собой?" data-i18n="rag_chip_3">
+          Нужен ли свой ноутбук и что взять с собой?
+        </button>
+      </div>
+
+      <!-- Input Form -->
+      <form class="rag-input-bar" id="ragChatForm">
+        <input
+          type="text"
+          id="ragUserInput"
+          required
+          autocomplete="off"
+          data-i18n-placeholder="rag_input_placeholder"
+          placeholder="Задайте вопрос по прайсу, FAQ или графику..."
+        />
+        <button type="submit" class="rag-send-btn" id="ragSendBtn" aria-label="Send message">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Floating Trigger FAB -->
+    <button type="button" class="rag-fab-btn" id="openRagChatBtn" aria-label="Open Good Edu AI Assistant">
+      <span class="rag-fab-icon">✨</span>
+      <span class="rag-fab-text">AI RAG Ассистент</span>
+      <span class="rag-fab-model">gemini-3.5-flash-lite</span>
+    </button>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification" aria-live="polite"></div>
+
+  <script src="local.config.js" onerror="console.info('Running without local.config.js — enter API key in UI')"></script>
+  <script src="data.js"></script>
+  <script src="googleRagEngine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+

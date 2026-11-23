@@ -1,0 +1,5 @@
+# Ignore local environment and secret config files
+.env
+.env.local
+local.config.js
+node_modules/
